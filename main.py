@@ -119,7 +119,7 @@ while cap.isOpened():
                 alphabet = 'Z'
             # Các trường hợp cử chỉ sai
             else:
-                alphabet = 'Unknow'
+                alphabet = 'Khong xac dinh'
 
     # Hiển thị chữ đã nhận dạng ra màn hình
     cv2.putText(img, str(alphabet), (50, 100), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 0, 255), 2, cv2.LINE_AA)
