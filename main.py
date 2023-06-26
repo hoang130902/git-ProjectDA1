@@ -18,8 +18,6 @@ cap = cv2.VideoCapture(0)
 while cap.isOpened():
     success, img = cap.read()
     # Đọc hình ảnh thành công
-    if not success:
-        break
     
     # Chuyển thành ảnh màu
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
