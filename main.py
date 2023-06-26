@@ -1,4 +1,3 @@
-#Chương trình nhận diện cử chỉ bàn tay hiển thị chữ cái
 import cv2 #import thư viện opencv
 import mediapipe as mp #import thư viện mediapipe
 
