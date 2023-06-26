@@ -31,7 +31,7 @@ while cap.isOpened():
         myHand = []
         for idx, hand in enumerate(result.multi_hand_landmarks):
             # Vẽ tọa độ khung xương bàn tay
-            mp_drawing_util.draw_landmarks(img, hand, mp_hand.HAND_CONNECTIONS)
+            mp_drawing_util.draw_landmarks(img, hand, mp_hand.HAND_CONNECTIONS, mp_drawing_style.get_default_hand_landmarks_style(), mp_drawing_style.get_default_hand_connections_style())
             for id, lm in enumerate(hand.landmark):
                 # Lấy các tọa độ
                 h, w, _ = img.shape
