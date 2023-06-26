@@ -8,8 +8,8 @@ mp_drawing_style = mp.solutions.drawing_styles
 mp_hand = mp.solutions.hands
 hands = mp_hand.Hands(
     model_complexity = 0,
-    min_detection_confidence = 0.5,
-    min_tracking_confidence = 0.5
+    min_detection_confidence = 0.5, #Giá trị mặc định
+    min_tracking_confidence = 0.5   #Giá trị mặc định
 )                       
 
 # Mở máy ảnh
@@ -26,11 +26,10 @@ while cap.isOpened():
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 
     alphabet = ''
-
+    # Vẽ tọa độ khung xương bàn tay
     if result.multi_hand_landmarks:
         myHand = []
         for idx, hand in enumerate(result.multi_hand_landmarks):
-            # Vẽ tọa độ khung xương bàn tay
             mp_drawing_util.draw_landmarks(img, hand, mp_hand.HAND_CONNECTIONS, mp_drawing_style.get_default_hand_landmarks_style(), mp_drawing_style.get_default_hand_connections_style())
             for id, lm in enumerate(hand.landmark):
                 # Lấy các tọa độ
