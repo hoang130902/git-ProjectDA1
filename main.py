@@ -34,7 +34,7 @@ while cap.isOpened():
             for id, lm in enumerate(hand.landmark):
                 # Lấy các tọa độ
                 h, w, _ = img.shape
-                myHand.append([int(lm.x * w), int(lm.y * h)])
+                myHand.append([int(lm.x * w), int(lm.y * h)]) #x = 0, y = 1
             # Từ các tọa độ => chữ cái muốn hiển thị
             # Nhận diện chữ A
             if myHand[4][0] > myHand[1][0] and myHand[8][1] > myHand[5][1] and myHand[12][1] > myHand[9][1] and myHand[16][1] > myHand[13][1] and myHand[20][1] > myHand[17][1] and myHand[1][1] > myHand[8][1] > myHand[2][1] and myHand[1][1] > myHand[12][1] > myHand[2][1] and myHand[1][1] > myHand[16][1] > myHand[2][1] and myHand[1][1] > myHand[20][1] > myHand[2][1]:
