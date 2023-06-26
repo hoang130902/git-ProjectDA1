@@ -110,7 +110,7 @@ while cap.isOpened():
             # Nhận diện chữ Y
             elif myHand[4][0] > myHand[10][0] and myHand[8][1] > myHand[5][1] and myHand[12][1] > myHand[9][1] and myHand[16][1] > myHand[13][1] and myHand[20][1] < myHand[17][1] and myHand[4][0] > myHand[5][0]:
                 alphabet = 'Y'
-            # Nhận diễn chữ Z
+            # Nhận diện chữ Z
             elif myHand[8][1] < myHand[4][1] and myHand[8][0] < myHand [4][0] and myHand[10][1] < myHand[4][1] < myHand[15][1]:
                 alphabet = 'Z'
             # Các trường hợp cử chỉ sai
