@@ -16,17 +16,17 @@ cap = cv2.VideoCapture(0)
 
 while cap.isOpened():
     success, img = cap.read()
-    # Đọc hình ảnh thành công
+    # Đọc hình ảnh không thành công thì break
     if not success:
         break
     # Chuyển thành ảnh màu
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    result = hands.process(img)
-    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) #Đọc vào là ảnh RGB, ảnh mặc định của openCV là BGR 
+    result = hands.process(img) # Đọc hình ảnh thành công
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR) #Sau khi chuyển sang RGB để xử lý, chuyển ngược lại BGR để hiển thị
 
     alphabet = ''
     # Vẽ tọa độ khung xương bàn tay
-    if result.multi_hand_landmarks:
+    if result.multi_hand_landmarks: #Khi nhận diện được bàn tay
         myHand = []
         for idx, hand in enumerate(result.multi_hand_landmarks):
             mp_drawing_util.draw_landmarks(img, hand, mp_hand.HAND_CONNECTIONS, mp_drawing_style.get_default_hand_landmarks_style(), mp_drawing_style.get_default_hand_connections_style())
