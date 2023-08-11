@@ -20,9 +20,9 @@ while cap.isOpened():
     if not success:
         break
     # Chuyển thành ảnh màu
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # Ảnh mặc định của openCV là BGR, ảnh đọc vào là ảnh RGB
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) # Hình ảnh ban đầu được chuyển từ màu BGR sang màu RGB để phù hợp với đầu vào của thư viện MediaPipe
     result = hands.process(img) # Đọc hình ảnh thành công
-    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR) # Sau khi chuyển sang RGB để xử lý, chuyển ngược lại BGR để hiển thị
+    img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR) # Sau khi xử lý, chuyển ngược lại từ màu RGB sang BGR để hiển thị hình ảnh với OpenCV.
 
     alphabet = ''
     # Vẽ tọa độ khung xương bàn tay
